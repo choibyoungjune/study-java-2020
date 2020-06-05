@@ -1,17 +1,23 @@
 package com.sangkon.tdd;
 
+import java.security.PublicKey;
 import java.util.Objects;
 
-public class Franc {
-    private int amount;
+public class Franc extends Money{
 
     public Franc(int amount) {
         this.amount = amount;
     }
 
     public Franc times(int multiplier) {
-        return new Franc(amount*multiplier);
+        return new Franc(amount * multiplier);
     }
+
+    @Override
+    public String currency() {
+        return "CHF";
+    }
+
 
     @Override
     public boolean equals(Object o) {
